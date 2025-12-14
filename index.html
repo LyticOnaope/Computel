@@ -1,744 +1,332 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Computel Nigeria Limited | Technology • Export • Agriculture</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/7e1d9c9d7f.js" crossorigin="anonymous"></script>
-
-  <style>
-    :root {
-      --primary-green: #1a6b3c;
-      --secondary-green: #2e8b57;
-      --light-green: #e8f5e9;
-      --dark-grey: #333333;
-      --medium-grey: #666666;
-      --light-grey: #f5f5f5;
-      --white: #ffffff;
-      --transition: all 0.3s ease;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      color: var(--dark-grey);
-      background-color: var(--white);
-      overflow-x: hidden;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
-
-    h1, h2, h3, h4 {
-      font-weight: 600;
-      line-height: 1.3;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      position: relative;
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background-color: var(--primary-green);
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-    }
-
-    .green {
-      color: var(--primary-green);
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: var(--primary-green);
-      color: var(--white);
-      padding: 12px 28px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background-color: var(--secondary-green);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .btn-secondary {
-      display: inline-block;
-      background-color: transparent;
-      color: var(--primary-green);
-      padding: 12px 28px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: var(--transition);
-      border: 2px solid var(--primary-green);
-    }
-
-    .btn-secondary:hover {
-      background-color: var(--primary-green);
-      color: var(--white);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .btn-link {
-      color: var(--primary-green);
-      text-decoration: none;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      transition: var(--transition);
-    }
-
-    .btn-link:hover {
-      color: var(--secondary-green);
-      transform: translateX(5px);
-    }
-
-    .btn-link i {
-      margin-left: 5px;
-      font-size: 0.9rem;
-    }
-
-    section {
-      padding: 80px 0;
-    }
-
-    /* Header & Navigation */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      transition: var(--transition);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      text-decoration: none;
-      color: var(--dark-grey);
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-    }
-
-    .nav-links li {
-      margin-left: 30px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--dark-grey);
-      font-weight: 500;
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary-green);
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: var(--primary-green);
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: var(--dark-grey);
-      cursor: pointer;
-    }
-
-    /* Hero Section */
-    .hero {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      color: var(--white);
-      text-align: center;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      z-index: 1;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    /* Services Section */
-    .services {
-      background-color: var(--light-grey);
-    }
-
-    .section-intro {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 3rem;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .service-card {
-      background-color: var(--white);
-      padding: 40px 30px;
-      border-radius: 8px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: var(--transition);
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .service-icon {
-      font-size: 3rem;
-      color: var(--primary-green);
-      margin-bottom: 1.5rem;
-    }
-
-    .service-card h3 {
-      margin-bottom: 1rem;
-    }
-
-    /* IT Section */
-    .it-section {
-      background-color: var(--white);
-    }
-
-    .it-columns {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 40px;
-      margin-top: 3rem;
-    }
-
-    .it-box {
-      background-color: var(--light-grey);
-      padding: 40px 30px;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .box-icon {
-      font-size: 2.5rem;
-      color: var(--primary-green);
-      margin-bottom: 1.5rem;
-    }
-
-    .it-box h3 {
-      margin-bottom: 1.5rem;
-    }
-
-    .it-box ul {
-      list-style: none;
-    }
-
-    .it-box li {
-      margin-bottom: 10px;
-      padding-left: 25px;
-      position: relative;
-    }
-
-    .it-box li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--primary-green);
-      font-weight: bold;
-    }
-
-    /* Export Section */
-    .export-section {
-      background-color: var(--light-green);
-    }
-
-    .export-columns {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 40px;
-      margin-top: 3rem;
-    }
-
-    .export-box {
-      background-color: var(--white);
-      padding: 40px 30px;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    /* About Section */
-    .about-section {
-      background-color: var(--white);
-    }
-
-    .about-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 3rem;
-    }
-
-    .about-card {
-      text-align: center;
-      padding: 30px 20px;
-      border-radius: 8px;
-      background-color: var(--light-grey);
-      transition: var(--transition);
-    }
-
-    .about-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .about-card i {
-      font-size: 2.5rem;
-      color: var(--primary-green);
-      margin-bottom: 1.5rem;
-    }
-
-    /* Contact Section */
-    .contact-section {
-      background-color: var(--light-grey);
-      text-align: center;
-    }
-
-    .contact-info {
-      list-style: none;
-      margin: 2rem 0;
-    }
-
-    .contact-info li {
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-    }
-
-    .contact-info i {
-      color: var(--primary-green);
-      margin-right: 10px;
-      width: 20px;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background-color: var(--primary-green);
-      color: var(--white);
-      border-radius: 50%;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .social-links a:hover {
-      background-color: var(--secondary-green);
-      transform: translateY(-5px);
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--dark-grey);
-      color: var(--white);
-      text-align: center;
-      padding: 30px 0;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 992px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-      
-      h2 {
-        font-size: 1.8rem;
-      }
-      
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: var(--white);
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        transform: translateY(-150%);
-        transition: var(--transition);
-      }
-
-      .nav-links.active {
-        transform: translateY(0);
-      }
-
-      .nav-links li {
-        margin: 15px 0;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .it-columns,
-      .export-columns {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 576px) {
-      section {
-        padding: 60px 0;
-      }
-      
-      .service-grid,
-      .about-info {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IT Services | Your Company</title>
+  <meta name="description" content="IT services: managed IT, cybersecurity, cloud, software development, IT consulting." />
+  <link rel="stylesheet" href="./main.css" />
 </head>
 
 <body>
+  <!-- Background particles (optional visual) -->
+  <div class="particles" aria-hidden="true"></div>
+
   <!-- Header -->
-  <header class="navbar">
-    <nav class="container nav-container">
-      <a href="#" class="logo"><span class="green">Computel</span> Nigeria Limited</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Go to homepage">
+        <span class="brand-mark">IT</span>
+        <span class="brand-text">Services</span>
+      </a>
 
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#it">IT & Consulting</a></li>
-        <li><a href="#export">Export Division</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
 
-      <button class="nav-toggle" id="nav-toggle"><i class="fas fa-bars"></i></button>
-    </nav>
+      <nav class="nav">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#solutions" class="nav-link">Solutions</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link nav-cta">Get Support</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content container">
-      <h1>Empowering Africa Through <span class="green">Technology, Trade & Agriculture</span></h1>
-      <p>At Computel Nigeria Limited, we integrate IT innovation, sustainable exports, and agricultural value to connect Africa with the global market.</p>
-      <div class="hero-buttons">
-        <a href="#services" class="btn">Explore Our Solutions</a>
-        <a href="#contact" class="btn-secondary">Partner With Us</a>
+  <!-- Hero -->
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="pill">Reliable IT • Secure Systems • Scalable Cloud</p>
+          <h1>IT Services that keep your business running—fast, secure, and supported.</h1>
+          <p class="lead">
+            Managed IT, cybersecurity, cloud & DevOps, software development, and IT consulting for modern teams.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Request a Quote</a>
+            <a class="btn btn-ghost" href="#services">Explore Services</a>
+          </div>
+
+          <div class="trust">
+            <div class="trust-item">
+              <strong>24/7</strong><span>Monitoring</span>
+            </div>
+            <div class="trust-item">
+              <strong>99.9%</strong><span>Uptime Focus</span>
+            </div>
+            <div class="trust-item">
+              <strong>SLA</strong><span>Support</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="card glass">
+            <h3>Quick Support</h3>
+            <p>Tell us what you need. We respond fast.</p>
+            <form class="mini-form" id="miniForm">
+              <label>
+                <span>Your Name</span>
+                <input type="text" name="name" placeholder="e.g., Onope" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+              <label>
+                <span>What do you need help with?</span>
+                <select name="topic" required>
+                  <option value="" selected disabled>Select a service</option>
+                  <option>Managed IT Support</option>
+                  <option>Cybersecurity</option>
+                  <option>Cloud & DevOps</option>
+                  <option>Software Development</option>
+                  <option>IT Consulting</option>
+                </select>
+              </label>
+              <button class="btn btn-primary btn-full" type="submit">Send</button>
+              <p class="form-note" id="miniMsg" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Services -->
-  <section id="services" class="services">
-    <div class="container">
-      <h2>Our Core Divisions</h2>
-      <p class="section-intro">We operate across three major sectors — Technology, Export, and Agriculture — building value through innovation and sustainability.</p>
-
-      <div class="service-grid">
-        <div class="service-card">
-          <i class="fas fa-laptop-code service-icon"></i>
-          <h3>IT & Consulting</h3>
-          <p>We drive digital transformation across sectors with AI, Cloud, and Cybersecurity solutions tailored to African industries.</p>
-          <a href="#it" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Our IT Services</h2>
+          <p>Everything you need to secure, support, and scale your business technology.</p>
         </div>
 
-        <div class="service-card">
-          <i class="fas fa-ship service-icon"></i>
-          <h3>Export Division</h3>
-          <p>We connect Nigerian products to global markets — from premium cashews to eco-friendly charcoal — promoting ethical trade.</p>
-          <a href="#export" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
-        </div>
+        <div class="grid cards-3">
+          <article class="card">
+            <h3>Managed IT Support</h3>
+            <p>Helpdesk, device management, patching, backups, and proactive monitoring.</p>
+            <ul class="ticks">
+              <li>Remote & onsite support</li>
+              <li>Network & Wi-Fi management</li>
+              <li>Backup & disaster recovery</li>
+            </ul>
+          </article>
 
-        <div class="service-card">
-          <i class="fas fa-seedling service-icon"></i>
-          <h3>Agricultural Solutions</h3>
-          <p>We promote sustainable agriculture through modern technology, efficient processing, and export-ready produce.</p>
-          <a href="#export" class="btn-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          <article class="card">
+            <h3>Cybersecurity</h3>
+            <p>Protect endpoints, users, and data with layered security and best practices.</p>
+            <ul class="ticks">
+              <li>Endpoint protection</li>
+              <li>Security audits & hardening</li>
+              <li>Policies & awareness</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Cloud & DevOps</h3>
+            <p>Migrate, optimize, and manage cloud workloads with strong automation.</p>
+            <ul class="ticks">
+              <li>Cloud migration</li>
+              <li>CI/CD & automation</li>
+              <li>Cost & performance tuning</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Software Development</h3>
+            <p>Web apps and business tools built with clean UI, performance, and security in mind.</p>
+            <ul class="ticks">
+              <li>Websites & dashboards</li>
+              <li>APIs & integrations</li>
+              <li>Maintenance & updates</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>IT Consulting</h3>
+            <p>Plan smarter. Modernize infrastructure and align technology with your goals.</p>
+            <ul class="ticks">
+              <li>IT strategy & roadmaps</li>
+              <li>Infrastructure design</li>
+              <li>Vendor selection</li>
+            </ul>
+          </article>
+
+          <article class="card highlight">
+            <h3>Business Continuity</h3>
+            <p>Keep operations running with reliable recovery and resilience planning.</p>
+            <ul class="ticks">
+              <li>Disaster recovery plans</li>
+              <li>Redundancy & failover</li>
+              <li>Incident response</li>
+            </ul>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- IT Section -->
-  <section id="it" class="it-section">
-    <div class="container">
-      <h2>IT & Consulting Services</h2>
-      <p class="section-intro">We empower Africa's private sector through digital innovation, cybersecurity, and infrastructure optimization.</p>
+    <!-- Solutions -->
+    <section class="section alt" id="solutions">
+      <div class="container">
+        <div class="section-head">
+          <h2>Solutions by Need</h2>
+          <p>Choose the path that matches your business stage.</p>
+        </div>
 
-      <div class="it-columns">
-        <div class="it-box">
-          <i class="fas fa-network-wired box-icon"></i>
-          <h3>Digital Transformation</h3>
-          <ul>
-            <li>AI & ML for predictive analytics and automation.</li>
-            <li>Cloud-based ERP & enterprise systems.</li>
-            <li>IoT solutions for manufacturing and energy sectors.</li>
-            <li>Blockchain for transparent transactions.</li>
+        <div class="grid cards-2">
+          <article class="card">
+            <h3>Startup IT Setup</h3>
+            <p>New business? We set up email, devices, security, and collaboration tools correctly from day one.</p>
+            <a class="link" href="#contact">Talk to us →</a>
+          </article>
+
+          <article class="card">
+            <h3>Office Network Upgrade</h3>
+            <p>Improve Wi-Fi coverage, speed, stability, and security across your workspace.</p>
+            <a class="link" href="#contact">Get an assessment →</a>
+          </article>
+
+          <article class="card">
+            <h3>Security & Compliance</h3>
+            <p>Reduce risk with audits, policy implementation, endpoint protection, and user training.</p>
+            <a class="link" href="#contact">Secure my business →</a>
+          </article>
+
+          <article class="card">
+            <h3>Cloud Migration</h3>
+            <p>Move servers and apps to the cloud with minimal downtime and smart cost control.</p>
+            <a class="link" href="#contact">Plan a migration →</a>
+          </article>
+        </div>
+
+        <div class="process">
+          <div class="process-step">
+            <span class="step">1</span>
+            <div>
+              <h4>Assess</h4>
+              <p>We review your current setup and pain points.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <span class="step">2</span>
+            <div>
+              <h4>Plan</h4>
+              <p>We propose the best path, timeline, and pricing.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <span class="step">3</span>
+            <div>
+              <h4>Deliver</h4>
+              <p>We implement and keep supporting you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container about">
+        <div>
+          <h2>About Us</h2>
+          <p>
+            We help businesses operate smoothly with secure, modern IT—so you can focus on growth.
+            Our approach is simple: reliable support, strong security, and clear communication.
+          </p>
+
+          <div class="badges">
+            <span class="badge">Fast response</span>
+            <span class="badge">Clear reporting</span>
+            <span class="badge">Secure by default</span>
+          </div>
+        </div>
+
+        <div class="card glass">
+          <h3>What you get</h3>
+          <ul class="ticks">
+            <li>Real support—not excuses</li>
+            <li>Proactive monitoring and maintenance</li>
+            <li>Security-first configuration</li>
+            <li>Simple, honest pricing</li>
           </ul>
         </div>
-
-        <div class="it-box">
-          <i class="fas fa-shield-alt box-icon"></i>
-          <h3>Cybersecurity & Infrastructure</h3>
-          <ul>
-            <li>Industrial Control System (ICS) protection.</li>
-            <li>24/7 Managed SOC monitoring.</li>
-            <li>Identity & Access Management (IAM).</li>
-            <li>Compliance with ISO, NIST & GDPR frameworks.</li>
-          </ul>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Export Section -->
-  <section id="export" class="export-section">
-    <div class="container">
-      <h2>Export Division – Sustainable Trade, Global Reach</h2>
-      <p class="section-intro">We build trusted export partnerships that promote Nigeria's resources globally while maintaining environmental and ethical standards.</p>
+    <!-- Contact -->
+    <section class="section cta" id="contact">
+      <div class="container contact">
+        <div>
+          <h2>Contact & Support</h2>
+          <p>Send a message and we’ll reply quickly.</p>
 
-      <div class="export-columns">
-        <div class="export-box">
-          <i class="fas fa-box-open box-icon"></i>
-          <h3>Our Export Products</h3>
-          <ul>
-            <li><strong>Cashew Nuts:</strong> Premium quality cashews for international markets.</li>
-            <li><strong>Charcoal:</strong> Eco-friendly hardwood charcoal meeting global standards.</li>
-            <li><strong>Shea Butter:</strong> Natural, high-quality shea butter for cosmetics.</li>
-            <li><strong>Agricultural Produce:</strong> Various crops processed for export markets.</li>
-          </ul>
+          <div class="contact-cards">
+            <div class="contact-card">
+              <h4>Email</h4>
+              <p><a href="mailto:hello@yourcompany.com">hello@yourcompany.com</a></p>
+            </div>
+            <div class="contact-card">
+              <h4>Phone</h4>
+              <p><a href="tel:+2340000000000">+234 000 000 0000</a></p>
+            </div>
+            <div class="contact-card">
+              <h4>Location</h4>
+              <p>Lagos, Nigeria</p>
+            </div>
+          </div>
         </div>
 
-        <div class="export-box">
-          <i class="fas fa-handshake box-icon"></i>
-          <h3>Why Choose Computel</h3>
-          <ul>
-            <li>Quality Assurance & Sustainability</li>
-            <li>Global Trade Compliance</li>
-            <li>Transparent Supply Chain</li>
-            <li>Long-term Partnership Focus</li>
-            <li>Market Intelligence & Logistics Support</li>
-          </ul>
-        </div>
+        <form class="card form" id="contactForm">
+          <label>
+            <span>Full Name</span>
+            <input type="text" name="fullName" placeholder="Your name" required />
+          </label>
+
+          <label>
+            <span>Email Address</span>
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+
+          <label>
+            <span>Service Needed</span>
+            <select name="service" required>
+              <option value="" selected disabled>Select one</option>
+              <option>Managed IT Support</option>
+              <option>Cybersecurity</option>
+              <option>Cloud & DevOps</option>
+              <option>Software Development</option>
+              <option>IT Consulting</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Tell us about your request..." required></textarea>
+          </label>
+
+          <button class="btn btn-primary btn-full" type="submit">Send Message</button>
+          <p class="form-note" id="contactMsg" aria-live="polite"></p>
+        </form>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- About Section -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <h2>About Computel</h2>
-      <p class="section-intro">Computel Nigeria Limited is a diversified enterprise committed to bridging Africa and the world through innovative IT solutions, sustainable exports, and agricultural value creation.</p>
-
-      <div class="about-info">
-        <div class="about-card">
-          <i class="fas fa-eye"></i>
-          <h3>Vision</h3>
-          <p>To be Africa's leading technology and export enterprise driving sustainable growth through innovation and integrity.</p>
-        </div>
-
-        <div class="about-card">
-          <i class="fas fa-bullseye"></i>
-          <h3>Mission</h3>
-          <p>To connect Nigerian innovation and resources to the world through trusted technology and trade solutions.</p>
-        </div>
-
-        <div class="about-card">
-          <i class="fas fa-heart"></i>
-          <h3>Core Values</h3>
-          <p>Integrity • Innovation • Partnership • Sustainability • Excellence</p>
-        </div>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> Your Company. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <p class="section-intro">Want to collaborate or learn more about our services? Let's build something impactful together.</p>
-
-      <ul class="contact-info">
-        <li><i class="fas fa-envelope"></i> admin@computelng.com</li>
-        <li><i class="fas fa-phone"></i> +234 </li>
-        <li><i class="fas fa-map-marker-alt"></i> Lagos, Nigeria</li>
-      </ul>
-
-      <div class="social-links">
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>© 2025 Computel Nigeria Limited | Technology • Export • Agriculture</p>
     </div>
   </footer>
 
-  <script>
-    // Mobile Navigation Toggle
-    const navToggle = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
-
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-      });
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
-    // Navbar background on scroll
-    window.addEventListener('scroll', () => {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-      } else {
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-      }
-    });
-  </script>
+  <script src="./main.js"></script>
 </body>
 </html>
