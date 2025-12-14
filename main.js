@@ -1,29 +1,36 @@
-const toggle = document.getElementById('nav-toggle');
-const navLinks = document.getElementById('nav-links');
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+const yearEl = document.getElementById("year");
 
-toggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+yearEl.textContent = new Date().getFullYear();
+
+// Mobile menu toggle (matches .nav-links.show in CSS)
+menuBtn.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("show");
+  menuBtn.setAttribute("aria-expanded", String(isOpen));
 });
 
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-      navLinks.classList.remove('active');
-    }
+// Close menu when clicking a link (mobile)
+document.querySelectorAll(".nav-link").forEach((a) => {
+  a.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+    menuBtn.setAttribute("aria-expanded", "false");
   });
 });
 
-// === Floating particles animation ===
-const hero = document.querySelector('.hero');
-for (let i = 0; i < 15; i++) {
-  const particle = document.createElement('div');
-  particle.classList.add('particle');
-  particle.style.left = Math.random() * 100 + '%';
-  particle.style.top = Math.random() * 100 + '%';
-  particle.style.animationDelay = (Math.random() * 5) + 's';
-  hero.appendChild(particle);
+// Simple "fake submit" handler (so forms don't reload page)
+function handleForm(formId, msgId) {
+  const form = document.getElementById(formId);
+  const msg = document.getElementById(msgId);
+  if (!form || !msg) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    msg.textContent = "Thanks! Your message has been recorded. (Connect this to backend/email later.)";
+    form.reset();
+    setTimeout(() => (msg.textContent = ""), 6000);
+  });
 }
+
+handleForm("miniForm", "miniMsg");
+handleForm("contactForm", "contactMsg");
