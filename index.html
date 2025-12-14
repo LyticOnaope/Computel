@@ -2,331 +2,253 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>IT Services | Your Company</title>
-  <meta name="description" content="IT services: managed IT, cybersecurity, cloud, software development, IT consulting." />
-  <link rel="stylesheet" href="./main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Computel Nigeria Limited | IT Services & Consulting</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/7e1d9c9d7f.js" crossorigin="anonymous"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
-  <!-- Background particles (optional visual) -->
-  <div class="particles" aria-hidden="true"></div>
-
   <!-- Header -->
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="Go to homepage">
-        <span class="brand-mark">IT</span>
-        <span class="brand-text">Services</span>
+  <header class="navbar" id="top">
+    <nav class="container nav-container" aria-label="Primary">
+      <a href="#top" class="logo" aria-label="Computel Nigeria Limited">
+        <span class="green">Computel</span> Nigeria Limited
       </a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
 
-      <nav class="nav">
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#solutions" class="nav-link">Solutions</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#contact" class="nav-link nav-cta">Get Support</a></li>
-        </ul>
-      </nav>
-    </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- Hero -->
-  <main id="home">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="pill">Reliable IT • Secure Systems • Scalable Cloud</p>
-          <h1>IT Services that keep your business running—fast, secure, and supported.</h1>
-          <p class="lead">
-            Managed IT, cybersecurity, cloud & DevOps, software development, and IT consulting for modern teams.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Request a Quote</a>
-            <a class="btn btn-ghost" href="#services">Explore Services</a>
-          </div>
-
-          <div class="trust">
-            <div class="trust-item">
-              <strong>24/7</strong><span>Monitoring</span>
-            </div>
-            <div class="trust-item">
-              <strong>99.9%</strong><span>Uptime Focus</span>
-            </div>
-            <div class="trust-item">
-              <strong>SLA</strong><span>Support</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <div class="card glass">
-            <h3>Quick Support</h3>
-            <p>Tell us what you need. We respond fast.</p>
-            <form class="mini-form" id="miniForm">
-              <label>
-                <span>Your Name</span>
-                <input type="text" name="name" placeholder="e.g., Onope" required />
-              </label>
-              <label>
-                <span>Email</span>
-                <input type="email" name="email" placeholder="you@example.com" required />
-              </label>
-              <label>
-                <span>What do you need help with?</span>
-                <select name="topic" required>
-                  <option value="" selected disabled>Select a service</option>
-                  <option>Managed IT Support</option>
-                  <option>Cybersecurity</option>
-                  <option>Cloud & DevOps</option>
-                  <option>Software Development</option>
-                  <option>IT Consulting</option>
-                </select>
-              </label>
-              <button class="btn btn-primary btn-full" type="submit">Send</button>
-              <p class="form-note" id="miniMsg" aria-live="polite"></p>
-            </form>
-          </div>
-        </div>
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <p class="kicker">IT Services • Cybersecurity • Cloud</p>
+      <h1>Modern <span class="green">IT Services</span> that keep your business running — securely.</h1>
+      <p class="lead">
+        Computel helps organizations in Nigeria and across Africa plan, build, secure, and support the technology that powers growth.
+      </p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn">Explore Services</a>
+        <a href="#contact" class="btn-secondary">Request a Quote</a>
       </div>
-    </section>
 
-    <!-- Services -->
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-head">
-          <h2>Our IT Services</h2>
-          <p>Everything you need to secure, support, and scale your business technology.</p>
-        </div>
-
-        <div class="grid cards-3">
-          <article class="card">
-            <h3>Managed IT Support</h3>
-            <p>Helpdesk, device management, patching, backups, and proactive monitoring.</p>
-            <ul class="ticks">
-              <li>Remote & onsite support</li>
-              <li>Network & Wi-Fi management</li>
-              <li>Backup & disaster recovery</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Cybersecurity</h3>
-            <p>Protect endpoints, users, and data with layered security and best practices.</p>
-            <ul class="ticks">
-              <li>Endpoint protection</li>
-              <li>Security audits & hardening</li>
-              <li>Policies & awareness</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Cloud & DevOps</h3>
-            <p>Migrate, optimize, and manage cloud workloads with strong automation.</p>
-            <ul class="ticks">
-              <li>Cloud migration</li>
-              <li>CI/CD & automation</li>
-              <li>Cost & performance tuning</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Software Development</h3>
-            <p>Web apps and business tools built with clean UI, performance, and security in mind.</p>
-            <ul class="ticks">
-              <li>Websites & dashboards</li>
-              <li>APIs & integrations</li>
-              <li>Maintenance & updates</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>IT Consulting</h3>
-            <p>Plan smarter. Modernize infrastructure and align technology with your goals.</p>
-            <ul class="ticks">
-              <li>IT strategy & roadmaps</li>
-              <li>Infrastructure design</li>
-              <li>Vendor selection</li>
-            </ul>
-          </article>
-
-          <article class="card highlight">
-            <h3>Business Continuity</h3>
-            <p>Keep operations running with reliable recovery and resilience planning.</p>
-            <ul class="ticks">
-              <li>Disaster recovery plans</li>
-              <li>Redundancy & failover</li>
-              <li>Incident response</li>
-            </ul>
-          </article>
-        </div>
+      <div class="trust-row" aria-label="Highlights">
+        <div class="trust-item"><i class="fas fa-clock" aria-hidden="true"></i><span>Fast response</span></div>
+        <div class="trust-item"><i class="fas fa-shield-alt" aria-hidden="true"></i><span>Security-first</span></div>
+        <div class="trust-item"><i class="fas fa-users" aria-hidden="true"></i><span>Expert support</span></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Solutions -->
-    <section class="section alt" id="solutions">
-      <div class="container">
-        <div class="section-head">
-          <h2>Solutions by Need</h2>
-          <p>Choose the path that matches your business stage.</p>
-        </div>
+  <!-- Services -->
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <h2>IT Services</h2>
+      <p class="section-intro">A focused set of services designed for reliability, performance, and security.</p>
 
-        <div class="grid cards-2">
-          <article class="card">
-            <h3>Startup IT Setup</h3>
-            <p>New business? We set up email, devices, security, and collaboration tools correctly from day one.</p>
-            <a class="link" href="#contact">Talk to us →</a>
-          </article>
-
-          <article class="card">
-            <h3>Office Network Upgrade</h3>
-            <p>Improve Wi-Fi coverage, speed, stability, and security across your workspace.</p>
-            <a class="link" href="#contact">Get an assessment →</a>
-          </article>
-
-          <article class="card">
-            <h3>Security & Compliance</h3>
-            <p>Reduce risk with audits, policy implementation, endpoint protection, and user training.</p>
-            <a class="link" href="#contact">Secure my business →</a>
-          </article>
-
-          <article class="card">
-            <h3>Cloud Migration</h3>
-            <p>Move servers and apps to the cloud with minimal downtime and smart cost control.</p>
-            <a class="link" href="#contact">Plan a migration →</a>
-          </article>
-        </div>
-
-        <div class="process">
-          <div class="process-step">
-            <span class="step">1</span>
-            <div>
-              <h4>Assess</h4>
-              <p>We review your current setup and pain points.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <span class="step">2</span>
-            <div>
-              <h4>Plan</h4>
-              <p>We propose the best path, timeline, and pricing.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <span class="step">3</span>
-            <div>
-              <h4>Deliver</h4>
-              <p>We implement and keep supporting you.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="section" id="about">
-      <div class="container about">
-        <div>
-          <h2>About Us</h2>
-          <p>
-            We help businesses operate smoothly with secure, modern IT—so you can focus on growth.
-            Our approach is simple: reliable support, strong security, and clear communication.
-          </p>
-
-          <div class="badges">
-            <span class="badge">Fast response</span>
-            <span class="badge">Clear reporting</span>
-            <span class="badge">Secure by default</span>
-          </div>
-        </div>
-
-        <div class="card glass">
-          <h3>What you get</h3>
-          <ul class="ticks">
-            <li>Real support—not excuses</li>
-            <li>Proactive monitoring and maintenance</li>
-            <li>Security-first configuration</li>
-            <li>Simple, honest pricing</li>
+      <div class="service-grid">
+        <article class="service-card">
+          <i class="fas fa-headset service-icon" aria-hidden="true"></i>
+          <h3>Managed IT Support</h3>
+          <p>Helpdesk, endpoint management, backups, and proactive monitoring to reduce downtime.</p>
+          <ul class="mini-list">
+            <li>Remote & onsite support</li>
+            <li>Patch & asset management</li>
+            <li>Backup & recovery</li>
           </ul>
+        </article>
+
+        <article class="service-card">
+          <i class="fas fa-shield-virus service-icon" aria-hidden="true"></i>
+          <h3>Cybersecurity</h3>
+          <p>Practical protection against threats with policies, tooling, and training.</p>
+          <ul class="mini-list">
+            <li>Risk assessment</li>
+            <li>Endpoint & email security</li>
+            <li>Awareness training</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <i class="fas fa-cloud service-icon" aria-hidden="true"></i>
+          <h3>Cloud & DevOps</h3>
+          <p>Cloud migrations, infrastructure automation, and reliable deployments.</p>
+          <ul class="mini-list">
+            <li>Cloud readiness</li>
+            <li>CI/CD pipelines</li>
+            <li>Cost optimization</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <i class="fas fa-code service-icon" aria-hidden="true"></i>
+          <h3>Software & Web Development</h3>
+          <p>Responsive websites and business apps that are maintainable and fast.</p>
+          <ul class="mini-list">
+            <li>Corporate websites</li>
+            <li>Portals & dashboards</li>
+            <li>Integrations & APIs</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <i class="fas fa-network-wired service-icon" aria-hidden="true"></i>
+          <h3>Network & Infrastructure</h3>
+          <p>Design, setup, and optimization for LAN/WAN, Wi‑Fi, and on‑prem systems.</p>
+          <ul class="mini-list">
+            <li>Network audits</li>
+            <li>Wi‑Fi design</li>
+            <li>Server setup</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <i class="fas fa-clipboard-check service-icon" aria-hidden="true"></i>
+          <h3>IT Consulting</h3>
+          <p>Strategy and execution support to align IT with your business goals.</p>
+          <ul class="mini-list">
+            <li>IT roadmaps</li>
+            <li>Vendor selection</li>
+            <li>Process improvement</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section id="solutions" class="section">
+    <div class="container">
+      <h2>How We Work</h2>
+      <p class="section-intro">Clear steps, measurable outcomes, and a support model that scales with you.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-badge">1</div>
+          <h3>Discover</h3>
+          <p>We review your current setup, risks, and priorities to define the right scope.</p>
+        </div>
+        <div class="step">
+          <div class="step-badge">2</div>
+          <h3>Deliver</h3>
+          <p>Implementation with timelines, documentation, and handover you can rely on.</p>
+        </div>
+        <div class="step">
+          <div class="step-badge">3</div>
+          <h3>Support</h3>
+          <p>Monitoring, maintenance, and continuous improvements to prevent recurring issues.</p>
         </div>
       </div>
-    </section>
 
-    <!-- Contact -->
-    <section class="section cta" id="contact">
-      <div class="container contact">
+      <div class="callout">
         <div>
-          <h2>Contact & Support</h2>
-          <p>Send a message and we’ll reply quickly.</p>
+          <h3>Need a dedicated IT partner?</h3>
+          <p class="muted">Get a quick assessment and a practical plan you can execute.</p>
+        </div>
+        <a class="btn" href="#contact">Talk to Us</a>
+      </div>
+    </div>
+  </section>
 
-          <div class="contact-cards">
-            <div class="contact-card">
-              <h4>Email</h4>
-              <p><a href="mailto:hello@yourcompany.com">hello@yourcompany.com</a></p>
-            </div>
-            <div class="contact-card">
-              <h4>Phone</h4>
-              <p><a href="tel:+2340000000000">+234 000 000 0000</a></p>
-            </div>
-            <div class="contact-card">
-              <h4>Location</h4>
-              <p>Lagos, Nigeria</p>
-            </div>
+  <!-- About -->
+  <section id="about" class="section section-alt">
+    <div class="container">
+      <h2>About Computel</h2>
+      <p class="section-intro">We focus on IT services that help businesses operate with confidence.</p>
+
+      <div class="about-info">
+        <div class="about-card">
+          <i class="fas fa-eye" aria-hidden="true"></i>
+          <h3>Vision</h3>
+          <p>To be a trusted technology partner powering secure, reliable digital growth across Africa.</p>
+        </div>
+
+        <div class="about-card">
+          <i class="fas fa-bullseye" aria-hidden="true"></i>
+          <h3>Mission</h3>
+          <p>Deliver practical IT, cybersecurity, and cloud solutions that improve uptime, safety, and performance.</p>
+        </div>
+
+        <div class="about-card">
+          <i class="fas fa-heart" aria-hidden="true"></i>
+          <h3>Values</h3>
+          <p>Integrity • Excellence • Partnership • Security • Continuous improvement</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="section-intro">Tell us what you need — we’ll respond with next steps and an estimate.</p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Reach us</h3>
+          <ul class="contact-info">
+            <li><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:admin@computelng.com">admin@computelng.com</a></li>
+            <li><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+234">+234</a> <span class="muted">(update number)</span></li>
+            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Lagos, Nigeria</li>
+          </ul>
+
+          <div class="social-links" aria-label="Social links">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
           </div>
         </div>
 
-        <form class="card form" id="contactForm">
-          <label>
-            <span>Full Name</span>
-            <input type="text" name="fullName" placeholder="Your name" required />
-          </label>
-
-          <label>
-            <span>Email Address</span>
-            <input type="email" name="email" placeholder="you@example.com" required />
-          </label>
-
-          <label>
-            <span>Service Needed</span>
-            <select name="service" required>
-              <option value="" selected disabled>Select one</option>
-              <option>Managed IT Support</option>
-              <option>Cybersecurity</option>
-              <option>Cloud & DevOps</option>
-              <option>Software Development</option>
-              <option>IT Consulting</option>
-              <option>Other</option>
-            </select>
-          </label>
-
-          <label>
-            <span>Message</span>
-            <textarea name="message" rows="5" placeholder="Tell us about your request..." required></textarea>
-          </label>
-
-          <button class="btn btn-primary btn-full" type="submit">Send Message</button>
-          <p class="form-note" id="contactMsg" aria-live="polite"></p>
+        <form class="contact-card" onsubmit="return false" aria-label="Contact form">
+          <h3>Quick request</h3>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="message">What do you need?</label>
+            <textarea id="message" name="message" rows="5" placeholder="Briefly describe your project or issue"></textarea>
+          </div>
+          <button class="btn" type="button" id="contact-submit">Send Message</button>
+          <p class="form-note muted" id="form-note" role="status" aria-live="polite"></p>
         </form>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <p>© <span id="year"></span> Your Company. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
+  <footer>
+    <div class="container footer-row">
+      <p>© 2025 Computel Nigeria Limited | IT Services & Consulting</p>
+      <a class="back-to-top" href="#top">Back to top <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
     </div>
   </footer>
 
-  <script src="./main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
