@@ -1,36 +1,61 @@
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
-const yearEl = document.getElementById("year");
+/* Mobile nav */
+const toggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
 
-yearEl.textContent = new Date().getFullYear();
-
-// Mobile menu toggle (matches .nav-links.show in CSS)
-menuBtn.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("show");
-  menuBtn.setAttribute("aria-expanded", String(isOpen));
-});
-
-// Close menu when clicking a link (mobile)
-document.querySelectorAll(".nav-link").forEach((a) => {
-  a.addEventListener("click", () => {
-    navLinks.classList.remove("show");
-    menuBtn.setAttribute("aria-expanded", "false");
+if (toggle && navLinks) {
+  toggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', String(isOpen));
   });
-});
 
-// Simple "fake submit" handler (so forms don't reload page)
-function handleForm(formId, msgId) {
-  const form = document.getElementById(formId);
-  const msg = document.getElementById(msgId);
-  if (!form || !msg) return;
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    msg.textContent = "Thanks! Your message has been recorded. (Connect this to backend/email later.)";
-    form.reset();
-    setTimeout(() => (msg.textContent = ""), 6000);
+  // Close mobile menu when clicking a link
+  navLinks.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
   });
 }
 
-handleForm("miniForm", "miniMsg");
-handleForm("contactForm", "contactMsg");
+/* Smooth scrolling with navbar offset */
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', (e) => {
+    const href = anchor.getAttribute('href');
+    if (!href || href === '#') return;
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    e.preventDefault();
+
+    const navbar = document.querySelector('.navbar');
+    const offset = navbar ? navbar.offsetHeight + 12 : 84;
+    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+});
+
+/* Floating particles animation */
+const hero = document.querySelector('.hero');
+if (hero) {
+  const count = 16;
+  for (let i = 0; i < count; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.top = 55 + Math.random() * 45 + '%';
+    particle.style.animationDelay = (Math.random() * 5) + 's';
+    particle.style.animationDuration = (7 + Math.random() * 6) + 's';
+    hero.appendChild(particle);
+  }
+}
+
+/* Demo contact form feedback (non-sending) */
+const submitBtn = document.getElementById('contact-submit');
+const note = document.getElementById('form-note');
+if (submitBtn && note) {
+  submitBtn.addEventListener('click', () => {
+    note.textContent = 'Thanks! This demo form doesn\'t send yet — connect it to your email/service when ready.';
+  });
+}
